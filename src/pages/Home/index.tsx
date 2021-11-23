@@ -22,16 +22,18 @@ interface CartItemsAmount {
 }
 
 const Home = (): JSX.Element => {
-  // const [products, setProducts] = useState<ProductFormatted[]>([]);
-  // const { addProduct, cart } = useCart();
+   const [products, setProducts] = useState<ProductFormatted[]>([]);
+   const { addProduct, cart } = useCart();
 
   // const cartItemsAmount = cart.reduce((sumAmount, product) => {
   //   // TODO
   // }, {} as CartItemsAmount)
 
   useEffect(() => {
+    // PAREI AQUI, O SETPRODUCTS NAO ESTA SETANDO OS PRODUTOS EM PRODUCTS, NÃO ESTÁ IMPRIMINDO O ARRAY COM OS PRODUTOS DA FAKE API
     async function loadProducts() {
-      // TODO
+      api.get('products').then(res => setProducts(res.data));
+      console.log(products);
     }
 
     loadProducts();
@@ -43,23 +45,27 @@ const Home = (): JSX.Element => {
 
   return (
     <ProductList>
-      <li>
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg" alt="Tênis de Caminhada Leve Confortável" />
-        <strong>Tênis de Caminhada Leve Confortável</strong>
-        <span>R$ 179,90</span>
-        <button
-          type="button"
-          data-testid="add-product-button"
-        // onClick={() => handleAddProduct(product.id)}
-        >
-          <div data-testid="cart-product-quantity">
-            <MdAddShoppingCart size={16} color="#FFF" />
-            {/* {cartItemsAmount[product.id] || 0} */} 2
-          </div>
+      {cart.map(carts => {
+        return(
+          <li key={carts.id}>
+            <img src={carts.image} alt={carts.title} />
+            <strong>{carts.title}</strong>
+            <span>{`R$ ${carts.price}`}</span>
+            <button
+              type="button"
+              data-testid="add-product-button"
+            // onClick={() => handleAddProduct(product.id)}
+            >
+              <div data-testid="cart-product-quantity">
+                <MdAddShoppingCart size={16} color="#FFF" />
+                {/* {cartItemsAmount[product.id] || 0} */} 2
+              </div>
 
-          <span>ADICIONAR AO CARRINHO</span>
-        </button>
+              <span>ADICIONAR AO CARRINHO</span>
+            </button>
       </li>
+        )
+      })}
     </ProductList>
   );
 };
