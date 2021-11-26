@@ -26,23 +26,30 @@ const Home = (): JSX.Element => {
    const { addProduct, cart } = useCart();
 
   const cartItemsAmount = cart.reduce((sumAmount, product) => {
-    sumAmount[product.id] = + 1;
+    const newSumAmount = {...sumAmount};
+    newSumAmount[product.id] = product.amount;
 
-    return sumAmount;
+    return newSumAmount;
   }, {} as CartItemsAmount)
 
   useEffect(() => {
-    // PAREI AQUI, O SETPRODUCTS NAO ESTA SETANDO OS PRODUTOS EM PRODUCTS, NÃO ESTÁ IMPRIMINDO O ARRAY COM OS PRODUTOS DA FAKE API
+
     async function loadProducts() {
-      // api.get('products').then(res => setProducts(res.data));
-      // console.log(products);
+      const response = await api.get<Product[]>('products');
+
+      const data = response.data.map(product => ({
+        ...product,
+        priceFormatted: formatPrice(product.price)
+      }))
+
+      setProducts(data);
     }
 
     loadProducts();
   }, []);
 
   function handleAddProduct(id: number) {
-    // TODO
+    addProduct(id);
   }
 
   return (
@@ -52,11 +59,11 @@ const Home = (): JSX.Element => {
           <li key={product.id}>
             <img src={product.image} alt={product.title} />
             <strong>{product.title}</strong>
-            <span>{`R$ ${product.price}`}</span>
+            <span>{`R$ ${product.priceFormatted}`}</span>
             <button
               type="button"
               data-testid="add-product-button"
-            // onClick={() => handleAddProduct(product.id)}
+             onClick={() => handleAddProduct(product.id)}
             >
               <div data-testid="cart-product-quantity">
                 <MdAddShoppingCart size={16} color="#FFF" />
