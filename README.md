@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  👟: buy your shoes while you code in react.
+  👟 buy your shoes while you code in react 👟.
 </p>
 
 <div align="center">
