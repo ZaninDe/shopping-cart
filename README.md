@@ -36,8 +36,8 @@
 
 # :camera: Screenshots
 <div align="center">
-   <img src="./.github/ss1.png" width="400px">
-   <img src="./.github/ss2.png" width="400px">
+   <img src=".github/ss1.png" width="400px">
+   <img src=".github/ss2.png" width="400px">
 </div>
    
  # :camera: Gif
