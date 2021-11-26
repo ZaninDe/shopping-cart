@@ -91,4 +91,3 @@ This project is under the [MIT license](./LICENSE).
 Made with 💖 by [Gabriel Zanin](https://www.linkedin.com/in/gabriel-zanin-ab802a206//). 
 
 Thank you! 🌠
-q
