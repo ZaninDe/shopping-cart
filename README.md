@@ -37,7 +37,7 @@
 # :camera: Screenshots
 <div align="center">
    <img src=".github/ss1.png" width="400px">
-   <img src=".github/ss2.png" width="600px">
+   <img src=".github/ss2.png" width="450px">
 </div>
    
  # :camera: Gif
@@ -70,8 +70,9 @@ Go to http://localhost:3333/ to see the result.
 
 # Run the Aplication
 $ yarn start
-```
+
 Go to http://localhost:3000/ to see the result.
+```
 
 # :bug: Issues
 
