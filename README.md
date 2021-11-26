@@ -65,7 +65,7 @@ $ yarn
 
 # Run the Server
 $ yarn server
-```
+
 Go to http://localhost:3333/ to see the result.
 
 # Run the Aplication
