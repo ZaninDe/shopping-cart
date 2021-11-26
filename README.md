@@ -37,12 +37,12 @@
 # :camera: Screenshots
 <div align="center">
    <img src=".github/ss1.png" width="400px">
-   <img src=".github/ss2.png" width="400px">
+   <img src=".github/ss2.png" width="600px">
 </div>
    
  # :camera: Gif
 <div align="center">
-   <img src="./github/dtgif.gif" width="700px">
+   <img src="./.github/g1.gif" width="700px">
 </div>
 
 # :rocket: Technologies
@@ -51,27 +51,31 @@ This project was made using the follow technologies:
 * [Typescript](https://www.typescriptlang.org/)      
 * [React](https://reactjs.org/)      
 * [Styled Components](https://styled-components.com/)
-* [MirageJS](https://miragejs.com/)
 
 # :computer: How to run
 
 ```bash
 # Clone Repository
-$ git clone https://github.com/ZaninDe/dtmoney.git
+$ git clone https://github.com/ZaninDe/shopping-cart.git
 ```
 
 ```bash
 # Install Dependencies
 $ yarn
 
-# Run Aplication
+# Run the Server
+$ yarn server
+```
+Go to http://localhost:3333/ to see the result.
+
+# Run the Aplication
 $ yarn start
 ```
 Go to http://localhost:3000/ to see the result.
 
 # :bug: Issues
 
-Create a <a href="https://github.com/ZaninDe/dtmoney/issues">new issue report</a>, it will be an honor to be able to help you solve and further improve our application.
+Create a <a href="https://github.com/ZaninDe/shopping-cart/issues">new issue report</a>, it will be an honor to be able to help you solve and further improve our application.
 
 # :sparkles: Contributing
 
